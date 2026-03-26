@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Add Task</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+  </head>
+  <body class="schedule">
+
+    <nav class="navbar">
+      <a href="Index.html" class="navbar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12L12 3l9 9M4 10v10a1 1 0 001 1h5v-6h4v6h5a1 1 0 001-1V10" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="Add.html" class="navbar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+        <span>Add</span>
+      </a>
+      <a href="Settings.html" class="navbar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <button class="focus-mode-btn" onclick="openFocusSetup()" title="Focus Mode">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>
+      </svg>
+      Focus
+    </button>
+
+    <div class="add-page-wrapper">
+      <div class="add-header">
+        <div class="add-header-icon">✏️</div>
+        <h2 class="add-title">Create Your Task</h2>
+        <p class="add-subtitle">Fill in the details below</p>
+      </div>
+
+      <div class="input-group">
+        <div class="form">
+          <label for="taskwork">
+            <span class="label-icon">📝</span> Task Name
+          </label>
+          <input type="text" id="taskwork" placeholder="What do you need to do?" autocomplete="off">
+        </div>
+
+        <div class="form">
+          <label for="time">
+            <span class="label-icon">🗓</span> Date and Time
+          </label>
+          <input type="datetime-local" id="time">
+        </div>
+
+        <div class="form">
+          <label for="tasklevel">
+            <span class="label-icon">⚡</span> Priority Level
+          </label>
+          <select id="tasklevel" class="tasklevel">
+            <option value="">Select priority</option>
+            <option value="easy">🟢 Easy</option>
+            <option value="medium">🟡 Medium</option>
+            <option value="hard">🔴 Hard</option>
+            <option value="important">⭐ Important</option>
+          </select>
+        </div>
+
+        <div class="form">
+          <label for="worktype">
+            <span class="label-icon">📁</span> Category
+          </label>
+          <select id="worktype" class="worktype">
+            <option value="">Select category</option>
+            <option value="Education">🎓 School / Education</option>
+            <option value="Personal">🏠 Personal / Home</option>
+            <option value="Work">💼 Office / Work</option>
+            <option value="other">📌 Other</option>
+          </select>
+        </div>
+
+        <div class="create-btn">
+          <button id="add-btn" class="add-task-btn">
+            <span class="btn-icon">+</span>
+            <span id="btn-text">Create Task</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="taskpreview" class="taskpreview"></div>
+    </div>
+    <div id="focusSetupOverlay" class="focus-overlay" style="display:none;">
+      <div class="focus-setup-card">
+        <button class="focus-close-btn" onclick="closeFocusSetup()">✕</button>
+        <div class="focus-setup-icon">🎯</div>
+        <h3 class="focus-setup-title">Focus Mode</h3>
+        <p class="focus-setup-sub">Pick a task and set your timer</p>
+
+        <div class="focus-form">
+          <label class="focus-label">Select Task</label>
+          <select id="focusTaskSelect" class="focus-select"></select>
+
+          <label class="focus-label">Duration (minutes)</label>
+          <div class="focus-presets">
+            <button class="focus-preset" onclick="setFocusDuration(15,this)">15m</button>
+            <button class="focus-preset active" onclick="setFocusDuration(25,this)">25m</button>
+            <button class="focus-preset" onclick="setFocusDuration(45,this)">45m</button>
+            <button class="focus-preset" onclick="setFocusDuration(60,this)">60m</button>
+          </div>
+          <input type="number" id="focusDuration" class="focus-input" value="25" min="1" max="180" placeholder="Custom minutes">
+
+          <label class="focus-sound-label">
+            <input type="checkbox" id="focusSound" checked>
+            <span>🎵 Peaceful ambient sound</span>
+          </label>
+
+          <button class="focus-start-btn" onclick="startFocusMode()">
+            ▶ Start Focus Session
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="focusScreen" class="focus-screen" style="display:none;">
+      <div class="focus-screen-inner">
+        <button class="focus-stop-btn" onclick="stopFocusMode()">✕ Stop</button>
+
+        <div class="focus-screen-emoji">🎯</div>
+        <div class="focus-screen-title" id="focusTaskName">Task Name</div>
+        <div class="focus-screen-meta" id="focusTaskMeta"></div>
+
+        <div class="focus-ring-wrap">
+          <svg width="200" height="200" viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="84" fill="none"
+              stroke="rgba(255,255,255,0.12)" stroke-width="16"/>
+            <circle id="focusRing" cx="100" cy="100" r="84" fill="none"
+              stroke="#4caf50" stroke-width="16"
+              stroke-dasharray="0 527.79"
+              transform="rotate(-90 100 100)"
+              style="transition: stroke-dasharray 0.8s linear;"/>
+            <text id="focusTimeDisplay" x="100" y="93" text-anchor="middle"
+              font-family="Inter,sans-serif" font-weight="700"
+              font-size="34" fill="white">00:00</text>
+            <text x="100" y="116" text-anchor="middle"
+              font-family="Poppins,sans-serif" font-size="13"
+              fill="rgba(255,255,255,0.55)">remaining</text>
+          </svg>
+        </div>
+
+        <div id="focusPercentText" class="focus-percent-text"></div>
+
+        <div class="focus-bar-outer">
+          <div id="focusBarInner" class="focus-bar-inner"></div>
+        </div>
+
+        <div class="focus-bar-labels">
+          <span id="focusDoneLabel" style="color:#4caf50;"></span>
+          <span id="focusLeftLabel" style="color:#ff9800;"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="Script.js" defer></script>
+  </body>
+</html>
