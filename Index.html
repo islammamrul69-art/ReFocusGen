@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>ReFocusGen- Organize Tasks. Stay Focused.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="description" content="ReFocusGen is a smart productivity and focus management app that helps you organize tasks, track progress, and stay focused with powerful tools and analytics.">
+    <meta name="keywords" content="productivity app, task manager, focus timer, study planner, productivity dashboard, to-do app">
+
+<meta name="author" content="Syed Aayan Islam">
+
+    <link rel="stylesheet" href="Style.css">
+  </head>
+  <body class="home-page">
+
+    <nav class="navbar">
+      <a href="Index.html" class="navbar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 12L12 3l9 9M4 10v10a1 1 0 001 1h5v-6h4v6h5a1 1 0 001-1V10" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="Add.html" class="navbar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+        </svg>
+        <span>Add</span>
+      </a>
+      <a href="Settings.html" class="navbar-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+
+    <div id="empty-home" class="empty-state" style="display:none;">
+      <div class="empty-icon">📋</div>
+      <h3 class="big">No tasks yet!</h3>
+      <p class="war">tap to create create to start your day</p>
+      <a href="Add.html">
+        <button class="add-btn-empty">+ Create Task</button>
+      </a>
+    </div>
+
+    <div id="mainContent" style="display:none;">
+      <h2 class="home-title">Dashboard</h2>
+
+      <div class="dash-filter-row">
+        <select id="filterPriority" class="dash-filter-select" onchange="renderDashboard()">
+          <option value="">All Priorities</option>
+          <option value="easy">🟢 Easy</option>
+          <option value="medium">🟡 Medium</option>
+          <option value="hard">🔴 Hard</option>
+          <option value="important">⭐ Important</option>
+        </select>
+        <select id="filterCategory" class="dash-filter-select" onchange="renderDashboard()">
+          <option value="">All Categories</option>
+          <option value="Education">🎓 Education</option>
+          <option value="Personal">🏠 Personal</option>
+          <option value="Work">💼 Work</option>
+          <option value="other">📌 Other</option>
+        </select>
+      </div>
+
+      <div class="dash-section">
+        <div class="dash-section-title">Overall Progress</div>
+        <div class="dash-main-row">
+          <div class="dash-circle-wrap main-circle">
+            <div id="overallDonut"></div>
+            <div class="dash-circle-label">All Tasks</div>
+            <div id="overallDetail" class="evedetail"></div>
+          </div>
+          <div class="dash-circle-wrap main-circle">
+            <div id="todayDonut"></div>
+            <div class="dash-circle-label">Today</div>
+            <div id="todayDetail" class="dash-detail"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-section">
+        <div class="dash-section-title">By Priority</div>
+        <div class="dash-grid" id="priorityGrid"></div>
+      </div>
+
+      <div class="dash-section">
+        <div class="dash-section-title">By Category</div>
+        <div class="dash-grid" id="categoryGrid"></div>
+      </div>
+      <div class="dash-legend">
+        <span class="legend-dot" style="background:#4caf50;"></span> Completed
+        <span class="legend-dot" style="background:#ef5350; margin-left:14px;"></span> Overdue
+        <span class="legend-dot"></span> Pending
+      </div>
+    </div>
+
+    <script src="Script.js" defer></script>
+  </body>
+</html>
