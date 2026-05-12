@@ -1,43 +1,110 @@
-🚀 InnoSpark Task Scheduler
+ReFocusGen
 
-A smart productivity tool for students, built with passion and persistence.
+ReFocusGen is a modern productivity and focus management web application designed to help users organize tasks, stay focused, and improve daily productivity.
 
-Project Overview:
-This is a comprehensive Task Management and 
-Scheduler web application designed to help students organize their daily studies, track progress, and stay focused.
+🚀 Live Demo
 
-Features:
-Task Tracking: Add, edit, and complete tasks seamlessly.
-Progress Visualization: A dynamic SVG Donut Chart that shows completed, pending, and overdue tasks.
-Persistent Storage: Uses localStorage so your data stays even after closing the browser.
-Theme Control: Fully functional Dark Mode and Light Mode.
-Responsive Design: Optimized for both mobile and desktop users.
+🌐 https://islammamrul69-art.github.io/ReFocusGen/
 
-Built on Mobile (My Journey):
 
-I am a 16-year-old student from West Bengal, India. 
-Due to financial constraints, I do not own a laptop.
-I developed this entire full-stack project using only a 4GB RAM mobile phone and limited internet data. 
-Every line of code was written and tested on this small screen.
-Winning this competition is my hope to finally afford a laptop and pursue 
-my dream of becoming a professional software engineer.
+---
 
-Technologies Used:
-Frontend: HTML5, CSS3 (Flexbox/Media Queries)
-Logic: JavaScript (ES6+, LocalStorage API)
-Deployment: GitHub & Netlify
+✨ Features
 
-Author
-Syed Aayan Islam
-Class 10 Student | Web Developer | 3D Modeler
+✅ Task Management System
 
-Learning with AI (My Teacher)
-As a student, I believe in using modern tools to enhance my learning. 
-Since I do not have a private tutor for web development, I used AI as my mentor/teacher.
+🎯 Focus Mode / Focus Sessions
 
-It helped me understand the complex JavaScript logic behind the Donut Chart and LocalStorage.
+📊 Productivity Dashboard & Analytics
 
-I used it to debug my CSS and make the site responsive for mobile users.
+🌙 Dark Mode Support
 
-It taught me the best practices for hosting on GitHub and Netlify.
-AI didn't just give me code; it helped me learn the "Why" behind every function.
+📱 Responsive Design
+
+💾 Local Storage Data Saving
+
+⚡ Fast and Lightweight UI
+
+
+
+---
+
+🛠️ Built With
+
+HTML5
+
+CSS3
+
+JavaScript
+
+GitHub Pages
+
+
+
+---
+
+🎯 Purpose
+
+ReFocusGen was created to provide a clean and modern productivity experience for students, creators, and everyday users who want a lightweight focus and task management platform.
+
+---
+
+🔮 Future Plans
+
+☁️ Cloud Sync
+
+🔐 User Authentication
+
+📲 Progressive Web App (PWA)
+
+📈 Advanced Analytics
+
+🤖 AI Productivity Features
+
+👥 Team Collaboration System
+
+
+---
+
+🧠 SEO & Optimization
+
+ReFocusGen includes:
+
+Meta SEO Tags
+
+Open Graph Support
+
+Google Search Console Integration
+
+Google Analytics Integration
+
+Mobile Responsive Design
+
+
+
+---
+
+🤝 Contribution
+
+Currently this project is independently developed and maintained.
+
+
+---
+
+📄 License
+
+This project is open for learning and educational purposes.
+
+
+---
+
+👨‍💻 Developer
+
+Developed by Syed Aayan Islam.
+
+
+---
+
+⭐ Support
+
+If you like the project, consider starring the repository and sharing feedback.
