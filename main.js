@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  applyTheme();
-  updateNavActive();
-  renderHome();
-  renderAddPage();
-});
+applyTheme();
+updateNavActive();
+renderHome();
+renderAddPage();
