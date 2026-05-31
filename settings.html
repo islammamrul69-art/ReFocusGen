@@ -66,14 +66,14 @@
       </div>
     </div>
 
-<script src="js/storage.js"   defer></script>
-<script src="js/theme.js"     defer></script>
-<script src="js/nav.js"       defer></script>
-<script src="js/toast.js"     defer></script>
-<script src="js/dashboard.js" defer></script>
-<script src="js/tasks.js"     defer></script>
-<script src="js/focus.js"     defer></script>
-<script src="js/main.js"      defer></script>
+    <script src="js/storage.js"   defer></script>
+    <script src="js/theme.js"     defer></script>
+    <script src="js/nav.js"       defer></script>
+    <script src="js/toast.js"     defer></script>
+    <script src="js/dashboard.js" defer></script>
+    <script src="js/tasks.js"     defer></script>
+    <script src="js/focus.js"     defer></script>
+    <script src="js/main.js"      defer></script>
     <script>
       function clearAllTasks() {
         if (confirm("Are you sure you want to delete all tasks? This cannot be undone.")) {
@@ -81,14 +81,6 @@
           showToast("All tasks cleared!", "success");
         }
       }
-
-      function updateThemeButtons() {
-        const theme = localStorage.getItem("theme") || "light";
-        document.getElementById("themeLight").classList.toggle("active", theme === "light");
-        document.getElementById("themeDark").classList.toggle("active", theme === "dark");
-      }
-
-      document.addEventListener("DOMContentLoaded", updateThemeButtons);
     </script>
   </body>
 </html>
