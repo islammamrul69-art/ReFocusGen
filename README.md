@@ -100,7 +100,7 @@ This project is open for learning and educational purposes.
 
 👨‍💻 Developer
 
-Developed by Syed Aayan Islam.
+developer syed aayan islam 
 
 
 ---
